@@ -32,7 +32,8 @@ jobs:
 jobs:
   CD:
     runs-on: ubuntu-latest
-
+    needs: [CI]
+    
     steps:
     - uses: actions/checkout@v4.1.7
     - name: Definindo o context  
