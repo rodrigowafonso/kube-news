@@ -26,6 +26,6 @@ jobs:
         file: ./src/Dockerfile
         push: true
         tags: |
-          rodrigoafonso/devops-kube-news:v1
+          rodrigoafonso/devops-kube-news:v${{ github.run_number }}
           rodrigoafonso/devops-kube-news:latest
   
