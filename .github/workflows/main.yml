@@ -29,3 +29,16 @@ jobs:
           rodrigoafonso/devops-kube-news:v${{ github.run_number }}
           rodrigoafonso/devops-kube-news:latest
   
+jobs:
+  CD:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4.1.7
+    - name: Definindo o context  
+      uses: Azure/k8s-set-context@v3.0
+      with:
+        method: kubeconfig
+        kubeconfig: ${{ secrets.K8S_CONFIG }}
+        
+    
