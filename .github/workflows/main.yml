@@ -1,0 +1,23 @@
+# Definindo nome da Pipeline
+name: Devops CI-CD
+
+on: 
+  push:
+    branches: ["main"]
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4.1.7
+    - name: Construção da Imagem Docker
+      uses: docker/build-push-action@v6.7.0
+      with:
+        context: ./src
+        file: ./src/Dockerfile
+        push: true
+        tags: |
+          rodrigoafonso/devops-kube-news:v1
+          rodrigoafonso/devops-kube-news:latest
+  
