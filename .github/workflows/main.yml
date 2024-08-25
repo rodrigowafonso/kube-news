@@ -43,7 +43,7 @@ jobs:
     - name: Provisionando o Kubernetes no Cluster
       uses: Azure/k8s-deploy@v4.9
       with:
-        images: rodrigoafonso/devops-kube-news:${{ github.run_number }}
+        images: rodrigoafonso/devops-kube-news:v${{ github.run_number }}
         manifests: |
           ./src/k8s/deployment.yaml
     
